@@ -1,0 +1,23 @@
+package com.study.majinhu.jdkBase.exception;
+
+/**
+ * @ClassName InsufficientFundsException
+ * @Description
+ * @Author majinhu
+ * @Date 2019/7/5 10:58
+ * @Version 1.0
+ **/
+//自定义异常类，继承Exception类
+public class InsufficientFundsException extends Exception
+{
+    //此处的amount用来储存当出现异常（取出钱多于余额时）所缺乏的钱
+    private double amount;
+    public InsufficientFundsException(double amount)
+    {
+        this.amount = amount;
+    }
+    public double getAmount()
+    {
+        return amount;
+    }
+}
