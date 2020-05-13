@@ -11,12 +11,12 @@ import org.springframework.stereotype.Component;
  * @Date 2019/7/11 16:36
  * @Version 1.0
  **/
-@Component
-@RabbitListener(queues = "q_fanout_C")
+//@Component
+//@RabbitListener(queues = "q_fanout_C")
 public class ReceiverC {
-
-    @RabbitHandler
-    public void process(String hello) {
-        System.out.println("CReceiver  : " + hello + "/n");
-    }
+//
+//    @RabbitHandler
+//    public void process(String hello) {
+//        System.out.println("CReceiver  : " + hello + "/n");
+//    }
 }

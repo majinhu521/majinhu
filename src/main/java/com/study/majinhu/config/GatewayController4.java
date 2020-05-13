@@ -21,7 +21,7 @@ public class GatewayController4 {
     @Autowired
     private ConfigBeanProp configBeanProp;
 
-    @RequestMapping(value = "/gateway")
+    @RequestMapping(value = "/gateway4")
     public String gateway() {
         return "get properties value by ''@Value'' :" +
                 //1、使用@Value注解读取

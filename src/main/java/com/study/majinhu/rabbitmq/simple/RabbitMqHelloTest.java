@@ -14,15 +14,15 @@ import org.springframework.test.context.junit4.SpringRunner;
  * @Date 2019/7/11 16:05
  * @Version 1.0
  **/
-@RunWith(SpringRunner.class)
-@SpringBootTest
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
 public class RabbitMqHelloTest {
 
-    @Autowired
-    private HelloSender helloSender;
-
-    @Test
-    public void hello() throws Exception {
-        helloSender.send();
-    }
+//    @Autowired
+//    private HelloSender helloSender;
+//
+//    @Test
+//    public void hello() throws Exception {
+//        helloSender.send();
+//    }
 }

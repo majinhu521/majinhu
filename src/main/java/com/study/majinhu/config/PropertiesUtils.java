@@ -22,7 +22,7 @@ import java.util.Properties;
  * @Date 2020/2/19 8:51
  * @Version 1.0
  **/
-@Component
+//@Component
 public class PropertiesUtils {
     Properties remoteProperties = new Properties();
 

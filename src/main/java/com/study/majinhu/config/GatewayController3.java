@@ -22,7 +22,7 @@ public class GatewayController3 {
     @Autowired
     private Environment environment;
 
-    @RequestMapping(value = "/gateway")
+    @RequestMapping(value = "/gateway3")
     public String gateway() {
         return "get properties value by ''@Value'' :" +
                 //1、使用@Value注解读取
