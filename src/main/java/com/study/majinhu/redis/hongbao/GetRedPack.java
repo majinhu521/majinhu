@@ -1,6 +1,7 @@
 package com.study.majinhu.redis.hongbao;
 
 import org.springframework.data.redis.connection.jedis.JedisUtils;
+import org.springframework.stereotype.Service;
 import redis.clients.jedis.Jedis;
 
 import java.util.UUID;
@@ -13,6 +14,7 @@ import java.util.concurrent.CountDownLatch;
  * @Date 2020/5/15 15:09
  * @Version 1.0
  **/
+@Service
 public class GetRedPack {
     //抢红包的方法
     static public void getHongBao() throws InterruptedException {

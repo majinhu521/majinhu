@@ -11,9 +11,9 @@ public class Basic {
         public static String ip = "192.168.46.133";
         public static int port = 6379;
         public static String auth = "12345678";
-        public static int honBaoCount = 1000;
+        public static int honBaoCount = 10;
 
-        public static int threadCount = 20;
+        public static int threadCount = 2;
         public static String hongBaoPoolKey = "hongBaoPoolKey"; //LIST类型来模拟红包池子
         public static String hongBaoDetailListKey = "hongBaoDetailListKey";//LIST类型，记录所有用户抢红包的详情
         public static String userIdRecordKey = "userIdRecordKey";//记录已经抢过红包的用户ID,防止重复抢

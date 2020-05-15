@@ -2,6 +2,7 @@ package com.study.majinhu.redis.hongbao;
 
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.data.redis.connection.jedis.JedisUtils;
+import org.springframework.stereotype.Service;
 import redis.clients.jedis.Jedis;
 
 import java.util.concurrent.CountDownLatch;
@@ -13,6 +14,7 @@ import java.util.concurrent.CountDownLatch;
  * @Date 2020/5/15 15:08
  * @Version 1.0
  **/
+@Service
 public class GenRedPack {
     /**
      * 多线程模拟红包池初始化  Jedis类

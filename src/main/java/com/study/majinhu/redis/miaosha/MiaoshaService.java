@@ -20,7 +20,7 @@ import javax.annotation.PostConstruct;
  * @Date 2019/8/28 9:35
  * @Version 1.0
  **/
-//@Service
+@Service
 public class MiaoshaService {
     @Autowired
     StringRedisTemplate stringRedisTemplate;
