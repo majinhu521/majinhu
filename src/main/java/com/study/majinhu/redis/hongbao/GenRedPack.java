@@ -20,7 +20,7 @@ public class GenRedPack {
      * 多线程模拟红包池初始化  Jedis类
      */
     public static void genHongBao() throws InterruptedException {
-         Jedis jedis = new Jedis("127.0.0.1",6379);
+//         Jedis jedis = new Jedis("127.0.0.1",6379);
 //        final JedisUtils jedis = new JedisUtils(Basic.ip, Basic.port, Basic.auth);
 
         //发枪器
@@ -30,6 +30,7 @@ public class GenRedPack {
             final int page = i;
             Thread thread = new Thread(){
                 public void run(){
+                    Jedis jedis = new Jedis("127.0.0.1",6379);
                     //每个线程要初始化多少个红包
                     int per = Basic.honBaoCount/Basic.threadCount;
 

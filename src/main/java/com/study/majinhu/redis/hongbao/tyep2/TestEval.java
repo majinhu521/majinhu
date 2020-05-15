@@ -10,7 +10,7 @@ import java.util.concurrent.CountDownLatch;
 /**
  * @ClassName TestEval
  * @Description https://blog.csdn.net/tangdong3415/article/details/59486096
- * @Author majinhu
+ * @Author majinhu 抢红包
  * @Date 2020/5/15 16:43
  * @Version 1.0
  **/
@@ -52,7 +52,7 @@ public class TestEval {
     }
     static public void generateTestData() throws InterruptedException {
         Jedis jedis = new Jedis(host);
-        jedis.flushAll();
+        //jedis.flushAll();
         final CountDownLatch latch = new CountDownLatch(threadCount);
         for(int i = 0; i < threadCount; ++i) {
             final int temp = i;
