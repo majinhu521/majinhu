@@ -58,6 +58,9 @@ public class RedisConfig {
 //        redisTemplate.afterPropertiesSet();
 //        return redisTemplate;
 //    }
+
+    //https://blog.csdn.net/sdrfengmi/article/details/103693212
+
     @Bean
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory factory) {
         RedisTemplate<String, Object> template = new RedisTemplate<String, Object>();
