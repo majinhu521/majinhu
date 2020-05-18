@@ -19,14 +19,14 @@ public class Basic {
         public static String userIdRecordKey = "userIdRecordKey";//记录已经抢过红包的用户ID,防止重复抢
 
         /*
-         * KEYS[1]:hongBaoPool：                   //键hongBaoPool为List类型，模拟红包池子，用来从红包池抢红包
-         * KEYS[2]:hongBaoDetailList：//键hongBaoDetailList为List类型，记录所有用户抢红包的详情
+         * KEYS[1]:hongBaoPool：             //键hongBaoPool为List类型，模拟红包池子，用来从红包池抢红包
+         * KEYS[2]:hongBaoDetailList：       //键hongBaoDetailList为List类型，记录所有用户抢红包的详情
          * KEYS[3]:userIdRecord ：           //键userIdRecord为Hash类型，记录所有已经抢过红包的用户ID
-         * KEYS[4]:userid ：                              //模拟抢红包的用户ID
+         * KEYS[4]:userid ：                 //模拟抢红包的用户ID
          *
          *
          * jedis.eval(  Basic.getHongBaoScript,   4,    Basic.hongBaoPoolKey,  Basic.hongBaoDetailListKey,	Basic.userIdRecordKey,  userid);
-         *                      Lua脚本                                参数个数                  key[1]                     key[2]                       key[3]      key[4]
+         *                      Lua脚本         参数个数           key[1]           key[2]                       key[3]      key[4]
          */
         public static String getHongBaoScript =
                 //查询用户是否已抢过红包，如果用户已抢过红包，则直接返回nil 
