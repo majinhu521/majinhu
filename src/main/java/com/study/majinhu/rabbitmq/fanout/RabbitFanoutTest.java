@@ -24,11 +24,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class RabbitFanoutTest {
 
-//    @Autowired
-//    private MsgSenderFanout msgSender;
-//
-//    @Test
-//    public void send1() throws Exception {
-//        msgSender.send();
-//    }
+    @Autowired
+    private MsgSenderFanout msgSender;
+
+    @Test
+    public void send1() throws Exception {
+        msgSender.send();
+    }
 }

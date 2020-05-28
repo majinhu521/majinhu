@@ -66,7 +66,7 @@ public class MiaoshaService {
         }
     }
     //初始化令牌池，提前加载。
-    @PostConstruct
+//    @PostConstruct
     public void initToken(){
         for (int i = 0; i <120 ; i++) {
             String goodsCode = "10001";

@@ -11,16 +11,16 @@ import org.springframework.stereotype.Component;
  * @Date 2019/7/11 16:38
  * @Version 1.0
  **/
-//@Component
+@Component
 public class MsgSenderFanout {
 
-//    @Autowired
-//    private AmqpTemplate rabbitTemplate;
-//
-//    public void send() {
-//        String context = "hi, fanout msg ";
-//        System.out.println("Sender : " + context);
-//        this.rabbitTemplate.convertAndSend("mybootfanoutExchange","", context);
-//    }
+    @Autowired
+    private AmqpTemplate rabbitTemplate;
+
+    public void send() {
+        String context = "hi, fanout msg ";
+        System.out.println("Sender : " + context);
+        this.rabbitTemplate.convertAndSend("mybootfanoutExchange","", context);
+    }
 }
 
