@@ -12,6 +12,8 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * https://blog.csdn.net/qq_27676247/article/details/91389404
+ * https://www.pianshen.com/article/36301262912/
+ * https://blog.csdn.net/Sadlay/article/details/87161615
  */
 @Configuration
 @Slf4j
@@ -45,7 +47,24 @@ public class DelayRabbitConfig {
      * return message;
      * });
      * 第二种就是每次发送消息动态设置延迟时间,这样我们可以灵活控制
-     **/
+     **
+
+    /**        return new Queue(ORDER_DELAY_QUEUE, true, false, false, params);
+     * Queue类的API：
+     * // 构造一个新的队列，给出一个名称、耐久性标志、排他和自动删除标志和参数；
+     * construct a new queue,given a name,durability flag, exclusive and auto-delete flag,and arguments;
+     * // 队列名字
+     * name
+     * // 如果声明一个持久队列（该队列将在服务器重新启动后继续存在），则为true；
+     * true if we are declaring a durable queue(the queue will survive a server restart) ; 
+     * // 如果我们声明一个排他队列（该队列将仅由声明者的连接使用），则为true；
+     * true if we are  declaring an exclusive queue(the queue will only be used by the declarer`s connection);
+     * // 如果服务器不再使用时应删除队列，则为true；
+     * true if the server should delete the queue  when it is no longer in use; 
+     * // 用于声明队列的参数；
+     * the argument used to declare hthe queue;
+     */
+
     @Bean
     public Queue delayOrderQueue() {
         Map<String, Object> params = new HashMap<>();
