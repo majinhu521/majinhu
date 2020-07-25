@@ -11,11 +11,11 @@ import org.springframework.stereotype.Component;
  * @Date 2019/7/11 16:36
  * @Version 1.0
  **/
-@Component
-@RabbitListener(queues = "q_fanout_B")
+//@Component
+//@RabbitListener(queues = "q_fanout_B")
 public class ReceiverB {
-
-    @RabbitHandler
+//
+//    @RabbitHandler
     public void process(String hello) {
         System.out.println("BReceiver  : " + hello + "/n");
     }
