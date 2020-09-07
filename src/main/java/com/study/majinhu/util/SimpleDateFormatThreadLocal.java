@@ -54,6 +54,10 @@ public class SimpleDateFormatThreadLocal {
         return threadLocal.get().format(date);
     }
 
+    public static void clear() {
+        t.remove();
+    }
+
     public static void main(String[] args) {
 
 //        Thread t1 = new Thread(() -> {

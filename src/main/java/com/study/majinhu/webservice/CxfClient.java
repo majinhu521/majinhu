@@ -21,7 +21,7 @@ public class CxfClient {
     public static void cl1() {
         try {
             // 接口地址
-            String address = "http://localhost:8083/services/TradeResultNotifyService?wsdl";
+            String address = "http://localhost:8088/services/TradeResultNotifyService?wsdl";
             // 代理工厂
             JaxWsProxyFactoryBean jaxWsProxyFactoryBean = new JaxWsProxyFactoryBean();
             // 设置代理地址
@@ -47,7 +47,7 @@ public class CxfClient {
     public static void cl2() {
         // 创建动态客户端
         JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
-        Client client = dcf.createClient("http://localhost:8083/services/TradeResultNotifyService?wsdl");
+        Client client = dcf.createClient("http://localhost:8088/services/TradeResultNotifyService?wsdl");
         // 需要密码的情况需要加上用户名和密码
         // client.getOutInterceptors().add(new ClientLoginInterceptor(USER_NAME,
         // PASS_WORD));
