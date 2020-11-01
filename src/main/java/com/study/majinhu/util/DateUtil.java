@@ -424,12 +424,25 @@ public class DateUtil {
     public static void main(String[] args) {
 //        System.out.println(getCertainMonthFirstDay("2020","02"));
 //        System.out.println(getCertainMonthLastDay("2020","02"));
-        String queryDate="201902";
-        String year=queryDate.trim().substring(0,4);
-        String month=queryDate.trim().substring(4,6);
-        System.out.println(year);
-        System.out.println(month);
+//        String queryDate="201902";
+//        String year=queryDate.trim().substring(0,4);
+//        String month=queryDate.trim().substring(4,6);
+//        System.out.println(year);
+        System.out.println(getNextYearEndDate(new Date()));
+    }
 
+
+
+    private static Date getNextYearEndDate(Date date){
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.set(Calendar.YEAR,cal.get(Calendar.YEAR)+1);
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND, 0);
+        Date date1=cal.getTime();
+        return date1;
     }
 
 }

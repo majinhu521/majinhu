@@ -11,7 +11,7 @@ import java.util.Date;
 
 /**
  * @ClassName DelayReceiver
- * @Description
+ * @Description https://www.jianshu.com/p/2c5eebfd0e95 消息的确认
  * @Author majinhu
  * @Date 2020/5/28 10:41
  * @Version 1.0
