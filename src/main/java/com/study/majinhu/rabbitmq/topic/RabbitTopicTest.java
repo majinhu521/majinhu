@@ -20,20 +20,20 @@ import org.springframework.test.context.junit4.SpringRunner;
  * @Date 2019/7/11 16:29
  * @Version 1.0
  **/
-@RunWith(SpringRunner.class)
-@SpringBootTest
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
 public class RabbitTopicTest {
 
-    @Autowired
-    private MsgSender msgSender;
-
-    @Test
-    public void send1() throws Exception {
-        msgSender.send1();
-    }
-
-    @Test
-    public void send2() throws Exception {
-        msgSender.send2();
-    }
+//    @Autowired
+//    private MsgSender msgSender;
+//
+//    @Test
+//    public void send1() throws Exception {
+//        msgSender.send1();
+//    }
+//
+//    @Test
+//    public void send2() throws Exception {
+//        msgSender.send2();
+//    }
 }

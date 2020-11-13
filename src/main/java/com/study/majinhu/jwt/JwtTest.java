@@ -17,11 +17,11 @@ import java.text.SimpleDateFormat;
  **/
 public class JwtTest {
     public static void main(String[] args) throws ParseException {
-        JwtTokenProvider jwtTokenProvider = new JwtTokenProvider("mytokenkey");
+        JwtTokenProvider jwtTokenProvider = new JwtTokenProvider("ifyoucanreadthisthenwhatiwanttotellyouisthiskeyisverysecurelol");
 
         DefaultClaims claims = new DefaultClaims();
         claims.put("userNo","majinhu1");
-        claims.put("expiretime", DateUtil.getAfterTime("1"));
+        claims.put("expiretime", DateUtil.getAfterTime("1000"));
         //自动过期，无需验证，如果过期，解析将抛出过期的异常，无法解析到Claims对象，为null。
         claims.setExpiration( new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(DateUtil.getAfterTime("1")));
         String token = jwtTokenProvider.createToken(claims);

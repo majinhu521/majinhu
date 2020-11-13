@@ -1,7 +1,11 @@
 package com.study.majinhu.redis;
 
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.*;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -19,19 +23,22 @@ import java.util.concurrent.TimeUnit;
  * @Date 2019/12/4 10:13
  * @Version 1.0
  **/
+@SpringBootTest
+@RunWith(SpringRunner.class)
 public class RedisType {
     @Autowired
     RedisTemplate redisTemplate;
 
     //String
+    @Test
     public void String(){
         //set void set(K key, V value);
         redisTemplate.opsForValue().set("num","123");
         redisTemplate.opsForValue().get("num");//输出结果为123
 
         //set void set(K key, V value, long timeout, TimeUnit unit);
-        redisTemplate.opsForValue().set("num","123",10, TimeUnit.SECONDS);
-        redisTemplate.opsForValue().get("num");//设置的是10秒失效，十秒之内查询有结果，十秒之后返回为null
+        redisTemplate.opsForValue().set("num2","123",10, TimeUnit.SECONDS);
+        redisTemplate.opsForValue().get("num2");//设置的是10秒失效，十秒之内查询有结果，十秒之后返回为null
 
         //set void set(K key, V value, long offset);
         //覆写(overwrite)给定 key 所储存的字符串值，从偏移量 offset 开始
@@ -70,6 +77,7 @@ public class RedisType {
     }
 
     //list
+    @Test
     public void list() {
         //size
         System.out.println(redisTemplate.opsForList().size("list"));
@@ -156,6 +164,7 @@ public class RedisType {
     }
 
     //Redis的Hash数据机构
+    @Test
     public void hash(){
 
         System.out.println(redisTemplate.opsForHash().delete("redisHash","name"));
@@ -213,6 +222,7 @@ public class RedisType {
     }
 
     //Redis的Set数据结构
+    @Test
     public void set(){
 //        Long add(K key, V... values);
 //        无序集合中添加元素，返回添加个数
@@ -259,6 +269,7 @@ public class RedisType {
     }
 
 //    Redis的ZSet数据结构
+    @Test
     public void zset(){
         //Boolean add(K key, V value, double score);
         //新增一个有序集合，存在的话为false，不存在的话为true

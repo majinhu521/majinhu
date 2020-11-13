@@ -18,15 +18,16 @@ import org.springframework.transaction.annotation.Transactional;
 @Component
 public class TestProxy {
 
-    @Autowired
-    private OperationLogMapper logMapper;
+//    @Autowired
+//    private OperationLogMapper logMapper;
 
     @Async
     @Transactional
     public void testAsyncAndTransactionalAnnotation() throws InterruptedException{
         System.out.println("异步线程ID:" + Thread.currentThread().getId());
         OperationLog record = new OperationLog("2", "测试用");
-        logMapper.insert(record);
+//        logMapper.insert(record);
+        System.out.println("插入记录");
         throw new RuntimeException("故意抛出一个异常");
     }
 

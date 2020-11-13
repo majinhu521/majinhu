@@ -14,19 +14,19 @@ import org.springframework.test.context.junit4.SpringRunner;
  * @Date 2019/7/11 16:05
  * @Version 1.0
  **/
-@RunWith(SpringRunner.class)
-@SpringBootTest
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
 public class RabbitMqHelloTest2 {
 
-    @Autowired
-    private HelloSender2 helloSender;
-
-    @Test
-    public void oneToMany() throws Exception {
-        for (int i=0;i<100;i++){
-            helloSender.send(i);
-            Thread.sleep(300);
-        }
-    }
+//    @Autowired
+//    private HelloSender2 helloSender;
+//
+//    @Test
+//    public void oneToMany() throws Exception {
+//        for (int i=0;i<100;i++){
+//            helloSender.send(i);
+//            Thread.sleep(300);
+//        }
+//    }
 
 }

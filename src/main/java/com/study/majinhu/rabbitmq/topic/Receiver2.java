@@ -13,8 +13,8 @@ import org.springframework.stereotype.Component;
  * @Date 2019/7/11 16:25
  * @Version 1.0
  **/
-@Component
-@RabbitListener(queues = "q_topic_messages")
+//@Component
+//@RabbitListener(queues = "q_topic_messages")
 public class Receiver2 {
 
     @RabbitHandler

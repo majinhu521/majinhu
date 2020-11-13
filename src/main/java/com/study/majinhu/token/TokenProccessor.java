@@ -58,7 +58,7 @@ public class TokenProccessor {
         return null;
     }
 
-    public static String generateToken(Long customer_id){
+    public static String generateToken(String customer_id){
         //10位随机因子
         String random = UUID.randomUUID().toString().substring(0,10);
         //对用户ID和10为随机因子进行MD5加密作为用户Token
@@ -94,7 +94,7 @@ public class TokenProccessor {
 
     public static void main(String[] args) {
         System.out.println(TokenProccessor.getInstance().makeToken2());
-        System.out.println(generateToken(123L));
+        System.out.println(generateToken("123"));
     }        
             
 }
