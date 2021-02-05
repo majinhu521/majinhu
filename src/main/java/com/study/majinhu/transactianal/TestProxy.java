@@ -1,5 +1,8 @@
 package com.study.majinhu.transactianal;
 
+import com.study.majinhu.orm.mybatis.entity.User;
+import com.study.majinhu.orm.mybatis.mapper.User2Mapper;
+import com.study.majinhu.orm.mybatis.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
@@ -20,15 +23,38 @@ public class TestProxy {
 
 //    @Autowired
 //    private OperationLogMapper logMapper;
-
+    @Autowired
+    UserMapper UserMapper;
+    @Autowired
+    User2Mapper User2Mapper;
+    /**
+     * 不能被catch Exception，RuntimeException，事务会失效，还会继续插入执行，不会回滚。
+     *
+     * @throws InterruptedException
+     */
     @Async
     @Transactional
     public void testAsyncAndTransactionalAnnotation() throws InterruptedException{
-        System.out.println("异步线程ID:" + Thread.currentThread().getId());
-        OperationLog record = new OperationLog("2", "测试用");
+//        try {
+            System.out.println("异步线程ID:" + Thread.currentThread().getId());
+            OperationLog record = new OperationLog("2", "测试用");
 //        logMapper.insert(record);
-        System.out.println("插入记录");
-        throw new RuntimeException("故意抛出一个异常");
+            User user2 = new User();
+            user2.setName("2");
+            user2.setPassword("2");
+            User2Mapper.saveUser(user2);
+
+            User user = new User();
+            user.setName("1");
+            user.setPassword("11111111111111111111111111111111");
+            UserMapper.saveUser(user);
+
+
+            System.out.println("插入记录");
+//            throw new RuntimeException("故意抛出一个异常");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 
 }

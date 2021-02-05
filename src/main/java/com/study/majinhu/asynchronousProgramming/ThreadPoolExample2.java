@@ -18,6 +18,8 @@ import java.util.concurrent.TimeUnit;
  * 毁，另外对线程个数也起到了限制作用
  * main 函数所在线程只需要把两个任务提交到线程池后就可以做
  * 己的 情了， 具体两个任务是 程池中的线程执行
+ *Java-ThreadPoolExecutor 线程池
+ * https://www.cnblogs.com/jhxxb/p/10833160.html
  * @Author majinhu
  * @Date 2020/11/11 9:42
  * @Version 1.0

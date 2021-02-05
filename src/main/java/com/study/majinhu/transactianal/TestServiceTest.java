@@ -20,9 +20,18 @@ public class TestServiceTest {
     @Autowired
     private TestService testService;
 
+    @Autowired
+    private TestService2 testService2;
+
+
     @Test
     public void test() throws InterruptedException{
-        testService.testAnnotation();
-        Thread.sleep(10000);
+        //失效方式
+//        testService.testAnnotation();
+        //正确方式1
+//        testService.testAnnotation2();
+        //正确方式2
+        testService2.testAnnotation();
+        Thread.sleep(30000);
     }
 }

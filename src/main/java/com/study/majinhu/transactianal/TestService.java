@@ -1,8 +1,11 @@
 package com.study.majinhu.transactianal;
 
+import com.study.majinhu.orm.mybatis.entity.User;
+import com.study.majinhu.orm.mybatis.mapper.UserMapper;
 import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -13,10 +16,14 @@ import org.springframework.transaction.annotation.Transactional;
  * @Date 2020/3/5 15:52
  * @Version 1.0
  **/
+@Service
 public class TestService implements ITestService{
 
     @Autowired
     private OperationLogMapper logMapper;
+
+    @Autowired
+    UserMapper UserMapper;
 
     /**
      * 测试注解 错误示范
@@ -42,8 +49,12 @@ public class TestService implements ITestService{
     public void testAsyncAndTransactionalAnnotation() throws InterruptedException{
         System.out.println("异步线程ID:" + Thread.currentThread().getId());
         //数据库操作，插入一条记录，可以换成任意的数据库写操作
-        OperationLog record = new OperationLog("1",  "测试用");
-        logMapper.insert(record);
+//        OperationLog record = new OperationLog("1",  "测试用");
+//        logMapper.insert(record);
+        User user = new User();
+        user.setName("1");
+        user.setPassword("1");
+        UserMapper.saveUser(user);
         throw new RuntimeException("故意抛出一个异常");
     }
 
