@@ -14,6 +14,8 @@ import org.springframework.transaction.annotation.Transactional;
  * * 另外一种办法是把带有注解的方法移到另外一个类中，
  *  * 其他类调用时候就会使用spring动态代理增强。
  *  * 比如我们把testAnnotation类移到TestProxy类中：
+ *  事务失效的6种情况：
+ *  https://baijiahao.baidu.com/s?id=1661565712893820457&wfr=spider&for=pc
  * @Author majinhu
  * @Date 2020/3/5 16:02
  * @Version 1.0
