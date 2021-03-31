@@ -15,20 +15,20 @@ import org.springframework.stereotype.Service;
  * @Date 2021/2/8 13:40
  * @Version 1.0
  **/
-@Service("RedLockLockService")
+//@Service("RedLockLockService")
 public class RedLockLockServiceImpl implements RedLockService {
 
     // 红锁
     @Autowired
-    @Qualifier("redissonRed1")
+//    @Qualifier("redissonRed1")
     private RedissonClient redissonRed1;
 
     @Autowired
-    @Qualifier("redissonRed2")
+//    @Qualifier("redissonRed2")
     private RedissonClient redissonRed2;
 
     @Autowired
-    @Qualifier("redissonRed3")
+//    @Qualifier("redissonRed3")
     private RedissonClient redissonRed3;
 
 //    @Autowired

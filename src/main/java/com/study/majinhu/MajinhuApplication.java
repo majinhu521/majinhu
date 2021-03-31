@@ -1,5 +1,6 @@
 package com.study.majinhu;
 
+import com.study.majinhu.controllerParam.StartCommand;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Configuration;
@@ -19,6 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class MajinhuApplication {
 
     public static void main(String[] args) {
+        // 启动参数设置, 比如自动生成端口
+//        new StartCommand(args);
         SpringApplication.run(MajinhuApplication.class, args);
     }
 

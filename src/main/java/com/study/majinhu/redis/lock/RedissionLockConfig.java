@@ -24,20 +24,20 @@ import org.springframework.context.annotation.Primary;
 public class RedissionLockConfig {
 
     //红锁:
-    @Bean(name = "redissonRed1")
+//    @Bean(name = "redissonRed1")
     @Primary
     public RedissonClient redissonRed1(){
         Config config = new Config();
         config.useSingleServer().setAddress("127.0.0.1:6379").setPassword("a123456").setDatabase(0);
         return Redisson.create(config);
     }
-    @Bean(name = "redissonRed2")
+//    @Bean(name = "redissonRed2")
     public RedissonClient redissonRed2(){
         Config config = new Config();
         config.useSingleServer().setAddress("127.0.0.1:6380").setDatabase(0);
         return Redisson.create(config);
     }
-    @Bean(name = "redissonRed3")
+//    @Bean(name = "redissonRed3")
     public RedissonClient redissonRed3(){
         Config config = new Config();
         config.useSingleServer().setAddress("127.0.0.1:6381").setDatabase(0);
