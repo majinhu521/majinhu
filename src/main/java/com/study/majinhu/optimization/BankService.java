@@ -1,8 +1,8 @@
 package com.study.majinhu.optimization;
 
-import com.sun.deploy.nativesandbox.comm.Request;
+//import com.sun.deploy.nativesandbox.comm.Request;
 import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.http.entity.ContentType;
+//import org.apache.http.entity.ContentType;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -11,7 +11,7 @@ import java.math.RoundingMode;
 /**
  * @ClassName BankService
  * @Description https://developer.aliyun.com/article/776399?spm=a2c6h.12873581.0.0.b6ac298aiGMsNK&groupCode=javaup
- *
+ *  https://github.com/Wasabi1234/Java-Interview-Tutorial
  * 三种标准数据类型的处理逻辑有重复
  * 处理流程中字符串拼接、加签和发请求的逻辑，在所有方法重复
  * 实际方法的入参的参数类型和顺序，不一定和接口要求一致，容易出错
