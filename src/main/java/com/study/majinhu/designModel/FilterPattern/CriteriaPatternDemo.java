@@ -2,6 +2,8 @@ package com.study.majinhu.designModel.FilterPattern;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @ClassName CriteriaPatternDemo
@@ -41,6 +43,42 @@ public class CriteriaPatternDemo {
 
         System.out.println("Single Or Females: ");
         printPersons(singleOrFemale.meetCriteria(persons));
+
+        //lambda表达式 list and 过滤
+        List<Person> men = persons.stream()
+                .filter(o -> "Male".equalsIgnoreCase(o.getGender()) )
+                .filter(o -> "Married".equalsIgnoreCase(o.getMaritalStatus()))
+                .collect(Collectors.toList());
+        System.out.println("Male and Married:" + men);
+        printPersons(men);
+
+
+        //https://www.cnblogs.com/tekikesyo/p/12712002.html
+
+        //lambda表达式 list or 合并
+        List<Person> men2 = persons.stream()
+                .filter(o -> "Female".equalsIgnoreCase(o.getGender()) )
+                .collect(Collectors.toList());
+        List<Person> newlist = new ArrayList<>(men2);
+        List<Person> men3 = persons.stream()
+                .filter(o -> "Single".equalsIgnoreCase(o.getMaritalStatus()))
+                .collect(Collectors.toList());
+        newlist.addAll(men3);
+        System.out.println("Single Or Females2: ");
+        printPersons(newlist);
+
+        //lambda表达式 list or 合并
+        List<Person> list1 = persons.stream()
+                .filter(o -> "Female".equalsIgnoreCase(o.getGender()) )
+                .collect(Collectors.toList());
+        List<Person> list2 = persons.stream()
+                .filter(o -> "Single".equalsIgnoreCase(o.getMaritalStatus()))
+                .collect(Collectors.toList());
+        List<Person> newlist1 = new ArrayList<>();
+        newlist1 = Stream.concat(list1.stream(),list2.stream()).collect(Collectors.toList());
+        System.out.println("Single Or Females3: ");
+        printPersons(newlist1);
+
     }
 
     public static void printPersons(List<Person> persons){
@@ -51,4 +89,5 @@ public class CriteriaPatternDemo {
                     +" ]");
         }
     }
+
 }

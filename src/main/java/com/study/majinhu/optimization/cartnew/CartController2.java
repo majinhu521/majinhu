@@ -51,6 +51,7 @@ public class CartController2{
         items.put(123L,1);
         items.put(124L,2);
         items.put(125L,2);
+
 //        if("Normal".equals(userCategory)){
 //            NormalUserCart normalUserCart = new NormalUserCart();
 //            return normalUserCart.process(userId,items);
